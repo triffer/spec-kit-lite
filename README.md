@@ -48,5 +48,6 @@ other spec-kit extensions.
 ## Installation
 
 ```bash
-specify extension add <path-to-speckit-lite> --dev
+git clone https://github.com/triffer/spec-kit-lite.git
+specify extension add /path/to/spec-kit-lite --dev
 ```

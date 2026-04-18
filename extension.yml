@@ -6,9 +6,9 @@ extension:
   version: "1.0.0"
   description: "Zero-ceremony implementation for simple tasks. One command: scan, implement, verify, and write a summary to specs/lite-summary.md."
   author: "Tim Riffer"
-  repository: "https://github.com/triffer/speckit-lite"
+  repository: "https://github.com/triffer/spec-kit-lite"
   license: "MIT"
-  homepage: "https://github.com/triffer/speckit-lite"
+  homepage: "https://github.com/triffer/spec-kit-lite"
 
 requires:
   speckit_version: ">=0.1.0"
