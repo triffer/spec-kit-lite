@@ -13,7 +13,7 @@ Lightweight spec-kit extension for small, well-scoped tasks where the full flow 
 ```
 
 ```
-/speckit-lite-implement Rename UserRepository.fetch to UserRepository.findById
+/speckit-lite-implement Add a GET /api/products/{id} endpoint to ProductController that returns a product by ID
 ```
 
 ## What it does
