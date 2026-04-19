@@ -132,7 +132,7 @@ You **MUST** consider the user input before proceeding (if not empty).
    - Verify the implemented change works as expected
    - Report final status with summary of completed work
 
-7. **Write summary** to `specs/lite-summary.md` (overwrite if it exists):
+7. **Write summary** to `specs/lite/summary.md` (overwrite if it exists):
 
    ```markdown
    # {short title}

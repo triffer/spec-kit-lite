@@ -1,24 +1,35 @@
 # Lite — Spec Kit Extension
 
-Lightweight spec-kit extension for small, well-scoped tasks where the full flow is not needed.
+Lightweight implementation for simple tasks where the full spec-kit flow is too heavy.
+
+## Commands
+
+| Command | Slash command | Purpose |
+|---|---|---|
+| `speckit.lite.clarify` | `/speckit-lite-clarify` | Read a Jira issue and clarify it against this repository |
+| `speckit.lite.implement` | `/speckit-lite-implement` | Implement a simple task in one pass |
 
 ## Usage
+
+### Clarify a Jira issue
+
+```
+/speckit-lite-clarify PROJ-123
+```
+
+Reads the issue, scans the codebase, and presents:
+- **Context** — which files and services are affected
+- **Impact** — what changes, what's affected downstream
+- **Potential problems** — edge cases, risks, constraints
+- **Recommendation** — lite implement, full flow, or ask the reporter for more info
+
+Requires the Jira MCP server to be configured.
+
+### Implement a task
 
 ```
 /speckit-lite-implement Fix the NPE in OrderService.processOrder when customer has no address
 ```
-
-```
-/speckit-lite-implement Add a test for the edge case where the product list is empty
-```
-
-```
-/speckit-lite-implement Add a GET /api/products/{id} endpoint to ProductController that returns a product by ID
-```
-
-## What it does
-
-When you run `/speckit-lite-implement`, the extension performs these steps:
 
 1. Checks complexity — suggests the full flow if the task is too big
 2. Reads the constitution and agent context
@@ -26,28 +37,31 @@ When you run `/speckit-lite-implement`, the extension performs these steps:
 4. Verifies ignore files if creating new files
 5. Implements the change with tests
 6. Runs the build
-7. Writes a summary to `specs/lite-summary.md`
+7. Writes a summary to `specs/lite/summary.md`
 
-## Hooks
+### Combined flow
 
-The extension supports `before_lite` and `after_lite` hooks for integration with
-other spec-kit extensions.
+```
+/speckit-lite-clarify PROJ-123       ← understand the issue
+/speckit-lite-implement Fix the ...  ← act on it
+```
 
 ## When to use
 
-| Task type                   | `/speckit-lite-implement` | Full flow |
-|-----------------------------|---------------------------|-----------|
-| Fix a bug                   | Yes                       |           |
-| Add a test                  | Yes                       |           |
-| Small refactor              | Yes                       |           |
-| Update config               | Yes                       |           |
-| Small feature (1-5 files)   | Yes                       |           |
-| New feature (multi-concern) |                           | Yes       |
-| New service or module       |                           | Yes       |
+| Task type | Lite | Full flow |
+|---|---|---|
+| Fix a bug | Yes | |
+| Add a test | Yes | |
+| Small refactor | Yes | |
+| Update config | Yes | |
+| Small feature (1-5 files) | Yes | |
+| New feature (multi-concern) | | Yes |
+| New service or module | | Yes |
 
 ## Installation
 
 ```bash
-git clone https://github.com/triffer/spec-kit-lite.git
-specify extension add /path/to/spec-kit-lite --dev
+specify extension add <path-to-spec-kit-lite> --dev
 ```
+
+For the clarify command, configure the Jira MCP server in your Claude Code settings.
