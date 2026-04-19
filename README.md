@@ -6,7 +6,7 @@ Lightweight implementation for simple tasks where the full spec-kit flow is too 
 
 | Command | Slash command | Purpose |
 |---|---|---|
-| `speckit.lite.clarify` | `/speckit-lite-clarify` | Read a Jira issue and clarify it against this repository |
+| `speckit.lite.clarify-jira` | `/speckit-lite-clarify-jira` | Read a Jira issue and clarify it against this repository |
 | `speckit.lite.implement` | `/speckit-lite-implement` | Implement a simple task in one pass |
 
 ## Usage
@@ -14,7 +14,7 @@ Lightweight implementation for simple tasks where the full spec-kit flow is too 
 ### Clarify a Jira issue
 
 ```
-/speckit-lite-clarify PROJ-123
+/speckit-lite-clarify-jira PROJ-123
 ```
 
 Reads the issue, scans the codebase, and presents:
@@ -42,7 +42,7 @@ Requires the Jira MCP server to be configured.
 ### Combined flow
 
 ```
-/speckit-lite-clarify PROJ-123       ← understand the issue
+/speckit-lite-clarify-jira PROJ-123       ← understand the issue
 /speckit-lite-implement Fix the ...  ← act on it
 ```
 

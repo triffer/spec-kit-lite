@@ -2,7 +2,7 @@
 
 ## 1.1.0
 
-- Added `speckit.lite.clarify` — read a Jira issue and clarify it against the repository
+- Added `speckit.lite.clarify-jira` — read a Jira issue and clarify it against the repository
   (context, impact, potential problems, recommendation)
 - Jira MCP server listed as optional dependency
 

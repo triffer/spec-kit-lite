@@ -3,7 +3,7 @@ schema_version: "1.0"
 extension:
   id: "lite"
   name: "Lite"
-  version: "1.0.0"
+  version: "1.1.0"
   description: "Zero-ceremony implementation for simple tasks. Clarify Jira issues against the codebase, implement in one pass, and write a summary to specs/lite/summary.md."
   author: "Tim Riffer"
   repository: "https://github.com/triffer/spec-kit-lite"
@@ -18,8 +18,8 @@ requires:
 
 provides:
   commands:
-    - name: "speckit.lite.clarify"
-      file: "commands/clarify.md"
+    - name: "speckit.lite.clarify-jira"
+      file: "commands/clarify-jira.md"
       description: "Read a Jira issue and clarify it against this repository. Identifies context, impact, potential problems, and recommends next steps."
 
     - name: "speckit.lite.implement"
